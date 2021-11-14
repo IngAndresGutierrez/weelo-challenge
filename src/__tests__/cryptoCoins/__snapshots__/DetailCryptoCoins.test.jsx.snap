@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing suite DetailCryptoCoins component Renders correctly - Snapshot 1`] = `
+<nav
+  aria-label="detail coins"
+  className="MuiList-root makeStyles-root-1 MuiList-padding"
+>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Symbol 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        BTC
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Name 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Bitcoin
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Rank 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        1
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Price USD 🡢  
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        $64,756.02
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        % Change 24h 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        1.65
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        % Change 1h 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        0.23
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        % Change 7D 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        6.51
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Price BTC 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        1.00
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Market Cap USD 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        $1,220,750,619,767.60
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Volume24 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        22,726,854,213.715
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Volume24A 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        27,873,040,814.983
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Csupply 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        18,851,540
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Tsupply 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        18,851,540
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <p
+        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Msupply 🡢
+      </p>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        21,000,000
+      </span>
+    </div>
+  </li>
+</nav>
+`;

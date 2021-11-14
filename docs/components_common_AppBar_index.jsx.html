@@ -1,4 +1,32 @@
-/* import external modules */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/common/AppBar/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/common/AppBar/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* import external modules */
 import {
   Menu,
   Avatar,
@@ -23,6 +51,16 @@ import { useState } from 'react'
 /* import internal modules */
 import useStyles from './styles'
 import LogoImage from '../../../assets/logo.png'
+
+/** @description This is a functional component for main app bar
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez &lt;g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name AppBar
+ *  @returns {Component} Returns the app bar component
+ **/
 
 const AppBarComponent = () => {
   const classes = useStyles()
@@ -59,7 +97,7 @@ const AppBarComponent = () => {
 
   const menuId = 'primary-search-account-menu'
   const renderMenu = (
-    <Menu
+    &lt;Menu
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={menuId}
@@ -68,38 +106,38 @@ const AppBarComponent = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={() => goToPage('/profile')}>
-        <IconButton
+      &lt;MenuItem onClick={() => goToPage('/profile')}>
+        &lt;IconButton
           aria-label="profile"
           aria-controls="primary-search-profile-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <Person />
-        </IconButton>
-        <Button className={classes.item} color="inherit">
+          &lt;Person />
+        &lt;/IconButton>
+        &lt;Button className={classes.item} color="inherit">
           Profile
-        </Button>
-      </MenuItem>
-      <MenuItem onClick={logoutFunction}>
-        <IconButton
+        &lt;/Button>
+      &lt;/MenuItem>
+      &lt;MenuItem onClick={logoutFunction}>
+        &lt;IconButton
           aria-label="logout"
           aria-controls="primary-search-logout-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <ExitToApp />
-        </IconButton>
-        <Button className={classes.item} color="inherit">
+          &lt;ExitToApp />
+        &lt;/IconButton>
+        &lt;Button className={classes.item} color="inherit">
           Log out
-        </Button>
-      </MenuItem>
-    </Menu>
+        &lt;/Button>
+      &lt;/MenuItem>
+    &lt;/Menu>
   )
 
   const mobileMenuId = 'primary-search-account-menu-mobile'
   const renderMobileMenu = (
-    <Menu
+    &lt;Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={mobileMenuId}
@@ -108,120 +146,120 @@ const AppBarComponent = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton
+      &lt;MenuItem>
+        &lt;IconButton
           aria-label="plans"
           aria-controls="primary-search-plans-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <MonetizationOn />
-        </IconButton>
-        <Button
+          &lt;MonetizationOn />
+        &lt;/IconButton>
+        &lt;Button
           onClick={() => goToPage('/subscription')}
           className={classes.item}
           color="inherit"
         >
           Plans
-        </Button>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
+        &lt;/Button>
+      &lt;/MenuItem>
+      &lt;MenuItem>
+        &lt;IconButton
           aria-label="get app"
           aria-controls="primary-search-get-app-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <GetApp />
-        </IconButton>
-        <Button
+          &lt;GetApp />
+        &lt;/IconButton>
+        &lt;Button
           onClick={() => goToPage('/getapp')}
           className={classes.item}
           color="inherit"
         >
           Download
-        </Button>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
+        &lt;/Button>
+      &lt;/MenuItem>
+      &lt;MenuItem>
+        &lt;IconButton
           aria-label="login of current user"
           aria-controls="primary-search-login-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <Lock />
-        </IconButton>
-        <Button
+          &lt;Lock />
+        &lt;/IconButton>
+        &lt;Button
           onClick={logoutFunction}
           className={classes.item}
           color="inherit"
         >
           Login
-        </Button>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
+        &lt;/Button>
+      &lt;/MenuItem>
+      &lt;MenuItem onClick={handleProfileMenuOpen}>
+        &lt;IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
-        </IconButton>
-        <Button
+          &lt;AccountCircle />
+        &lt;/IconButton>
+        &lt;Button
           onClick={() => goToPage('/')}
           className={classes.item}
           color="inherit"
         >
           Profile
-        </Button>
-      </MenuItem>
-    </Menu>
+        &lt;/Button>
+      &lt;/MenuItem>
+    &lt;/Menu>
   )
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          <Avatar
+    &lt;div className={classes.grow}>
+      &lt;AppBar position="static">
+        &lt;Toolbar>
+          &lt;Avatar
             alt="Logo"
             src={LogoImage}
             className={classes.avatar}
             onClick={() => goToPage('/home')}
           />
-          <Typography
+          &lt;Typography
             onClick={() => goToPage('/home')}
             className={classes.title}
             variant="h6"
             noWrap
           >
             Weelo Challenge
-          </Typography>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <div className={classes.grow} />
-            <Button
+          &lt;/Typography>
+          &lt;div className={classes.grow} />
+          &lt;div className={classes.sectionDesktop}>
+            &lt;div className={classes.grow} />
+            &lt;Button
               onClick={() => goToPage('/subscription')}
               className={classes.item}
               color="inherit"
             >
               Plans
-            </Button>
-            <Button
+            &lt;/Button>
+            &lt;Button
               onClick={() => goToPage('/getapp')}
               className={classes.item}
               color="inherit"
             >
               Download
-            </Button>
-            <Button
+            &lt;/Button>
+            &lt;Button
               onClick={() => goToPage('/')}
               className={classes.itemLogin}
               color="inherit"
             >
               Sign in
-            </Button>
-            <IconButton
+            &lt;/Button>
+            &lt;IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -230,26 +268,49 @@ const AppBarComponent = () => {
               color="inherit"
               className={classes.handleUserButton}
             >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
+              &lt;AccountCircle />
+            &lt;/IconButton>
+          &lt;/div>
+          &lt;div className={classes.sectionMobile}>
+            &lt;IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreVert />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
+              &lt;MoreVert />
+            &lt;/IconButton>
+          &lt;/div>
+        &lt;/Toolbar>
+      &lt;/AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </div>
+    &lt;/div>
   )
 }
 
 export default AppBarComponent
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCurrencyFormatUsd">addCurrencyFormatUsd</a></li><li><a href="global.html#addCurrencyFormatUsdWithoutDollarSymbol">addCurrencyFormatUsdWithoutDollarSymbol</a></li><li><a href="global.html#AlertDialog">AlertDialog</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppBar">AppBar</a></li><li><a href="global.html#Copyright">Copyright</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#DataGridCryptoCoins">DataGridCryptoCoins</a></li><li><a href="global.html#DetailCryptoCoins">DetailCryptoCoins</a></li><li><a href="global.html#Loading">Loading</a></li><li><a href="global.html#MainCryptoCoins">MainCryptoCoins</a></li><li><a href="global.html#MainCryptoCoinsView">MainCryptoCoinsView</a></li><li><a href="global.html#MiniDrawer">MiniDrawer</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SnackBar">SnackBar</a></li><li><a href="global.html#TableCryptoCoins">TableCryptoCoins</a></li><li><a href="global.html#TableCryptoCoinsToolbar">TableCryptoCoinsToolbar</a></li><li><a href="global.html#theme">theme</a></li><li><a href="global.html#transformData">transformData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Nov 14 2021 10:24:49 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

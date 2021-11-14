@@ -28,8 +28,18 @@ import { useState } from 'react'
 
 /* import internal modules */
 import useStyles from './styles'
+import AlertDialog from '../AlertDialog'
 import LogoImage from '../../../assets/logo.png'
-import AlertDialog from '../../common/AlertDialog'
+
+/** @description This is a functional component for mini drawer
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez <g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name MiniDrawer
+ *  @returns {Component} Returns the minidrawer component
+ **/
 
 const MiniDrawer = ({ children }) => {
   const theme = useTheme()
@@ -126,7 +136,7 @@ const MiniDrawer = ({ children }) => {
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash'].map((text, index) => (
+          {['All mail'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
                 {index % 2 === 0 ? <Inbox /> : <Mail />}

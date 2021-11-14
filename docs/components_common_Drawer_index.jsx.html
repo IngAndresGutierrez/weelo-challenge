@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/common/Drawer/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/common/Drawer/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* import external modules */
+import clsx from 'clsx'
+import {
+  List,
+  Drawer,
+  AppBar,
+  Toolbar,
+  Avatar,
+  Button,
+  Divider,
+  useTheme,
+  ListItem,
+  IconButton,
+  Typography,
+  ListItemIcon,
+  ListItemText,
+} from '@material-ui/core'
+import {
+  Mail,
+  Menu,
+  Inbox,
+  People,
+  ChevronLeft,
+  ChevronRight,
+  AccountCircle,
+} from '@material-ui/icons'
+import { useState } from 'react'
+
+/* import internal modules */
+import useStyles from './styles'
+import AlertDialog from '../AlertDialog'
+import LogoImage from '../../../assets/logo.png'
+
+/** @description This is a functional component for mini drawer
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez &lt;g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name MiniDrawer
+ *  @returns {Component} Returns the minidrawer component
+ **/
+
+const MiniDrawer = ({ children }) => {
+  const theme = useTheme()
+  const classes = useStyles()
+  const [open, setOpen] = useState(false)
+
+  const goToPage = (path) => {
+    console.log('goToPage', path)
+  }
+
+  const handleDrawerOpen = () => {
+    setOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpen(false)
+  }
+
+  const goToRoute = (route) => {
+    console.log('goToRoute', route)
+  }
+
+  return (
+    &lt;div className={classes.root}>
+      &lt;AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        &lt;Toolbar>
+          &lt;IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, {
+              [classes.hide]: open,
+            })}
+          >
+            &lt;Menu />
+          &lt;/IconButton>
+          &lt;Avatar
+            alt="Logo"
+            src={LogoImage}
+            className={classes.avatar}
+            onClick={() => goToPage('/')}
+          />
+          &lt;Typography onClick={() => goToPage('/')} variant="h6" noWrap>
+            Weelo Challenge
+          &lt;/Typography>
+          &lt;div className={classes.grow} />
+          &lt;Button onClick={() => goToPage('/')} color="inherit">
+            Login
+          &lt;/Button>
+          &lt;Button onClick={() => goToPage('/subscription')} color="inherit">
+            Plans
+          &lt;/Button>
+          &lt;Button onClick={() => goToPage('/getapp')} color="inherit">
+            Download
+          &lt;/Button>
+          &lt;AlertDialog title="Handle user" iconOpenButton={&lt;AccountCircle />}>
+            &lt;h3>user&lt;/h3>
+          &lt;/AlertDialog>
+        &lt;/Toolbar>
+      &lt;/AppBar>
+      &lt;Drawer
+        variant="permanent"
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
+      >
+        &lt;div className={classes.toolbar}>
+          &lt;h2>Weelo Challenge&lt;/h2>
+          &lt;IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'rtl' ? &lt;ChevronRight /> : &lt;ChevronLeft />}
+          &lt;/IconButton>
+        &lt;/div>
+        &lt;Divider />
+        &lt;List>
+          &lt;ListItem button onClick={() => goToRoute('/users')}>
+            &lt;ListItemIcon>
+              &lt;People />
+            &lt;/ListItemIcon>
+            &lt;ListItemText primary={'Usuarios'} />
+          &lt;/ListItem>
+        &lt;/List>
+        &lt;Divider />
+        &lt;List>
+          {['All mail'].map((text, index) => (
+            &lt;ListItem button key={text}>
+              &lt;ListItemIcon>
+                {index % 2 === 0 ? &lt;Inbox /> : &lt;Mail />}
+              &lt;/ListItemIcon>
+              &lt;ListItemText primary={text} />
+            &lt;/ListItem>
+          ))}
+        &lt;/List>
+      &lt;/Drawer>
+      &lt;main className={classes.content}>
+        &lt;div className={classes.toolbar} />
+        {children}
+      &lt;/main>
+    &lt;/div>
+  )
+}
+
+export default MiniDrawer
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCurrencyFormatUsd">addCurrencyFormatUsd</a></li><li><a href="global.html#addCurrencyFormatUsdWithoutDollarSymbol">addCurrencyFormatUsdWithoutDollarSymbol</a></li><li><a href="global.html#AlertDialog">AlertDialog</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppBar">AppBar</a></li><li><a href="global.html#Copyright">Copyright</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#DataGridCryptoCoins">DataGridCryptoCoins</a></li><li><a href="global.html#DetailCryptoCoins">DetailCryptoCoins</a></li><li><a href="global.html#Loading">Loading</a></li><li><a href="global.html#MainCryptoCoins">MainCryptoCoins</a></li><li><a href="global.html#MainCryptoCoinsView">MainCryptoCoinsView</a></li><li><a href="global.html#MiniDrawer">MiniDrawer</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SnackBar">SnackBar</a></li><li><a href="global.html#TableCryptoCoins">TableCryptoCoins</a></li><li><a href="global.html#TableCryptoCoinsToolbar">TableCryptoCoinsToolbar</a></li><li><a href="global.html#theme">theme</a></li><li><a href="global.html#transformData">transformData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Nov 14 2021 10:24:49 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

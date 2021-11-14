@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/DetailCryptoCoins/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/DetailCryptoCoins/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* import external modules */
+import { List, ListItem, ListItemText } from '@material-ui/core'
+
+/* import internal modules */
+import { useStyles } from './styles'
+import {
+  addCurrencyFormatUsd,
+  addCurrencyFormatUsdWithoutDollarSymbol,
+} from '../../utils/currencyFormat'
+
+/** @description This is a functional component for detail about cryptocurreny coins
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez &lt;g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name DetailCryptoCoins
+ *  @returns {Component} Returns the detail about cryptocurreny coins component
+ **/
+
+const DetailCryptoCoins = ({ informationCoin }) => {
+  const classes = useStyles()
+
+  const renderDetailCryptoCoin = (
+    &lt;>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Symbol 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.symbol}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Name 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.name}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Rank 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.rank}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Price USD 🡢  `} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsd(informationCoin?.price_usd)}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`% Change 24h 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.percent_change_24h}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`% Change 1h 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.percent_change_1h}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`% Change 7D 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.percent_change_7d}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Price BTC 🡢`} />
+        &lt;ListItemText primary={`${informationCoin?.price_btc}`} />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Market Cap USD 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsd(informationCoin?.market_cap_usd)}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Volume24 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsdWithoutDollarSymbol(
+            informationCoin?.volume24
+          )}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Volume24A 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsdWithoutDollarSymbol(
+            informationCoin?.volume24a
+          )}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Csupply 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsdWithoutDollarSymbol(
+            informationCoin?.csupply
+          )}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Tsupply 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsdWithoutDollarSymbol(
+            informationCoin?.tsupply
+          )}`}
+        />
+      &lt;/ListItem>
+      &lt;ListItem divider>
+        &lt;ListItemText secondary={`Msupply 🡢`} />
+        &lt;ListItemText
+          primary={`${addCurrencyFormatUsdWithoutDollarSymbol(
+            informationCoin?.msupply
+          )}`}
+        />
+      &lt;/ListItem>
+    &lt;/>
+  )
+
+  return (
+    &lt;List component="nav" className={classes.root} aria-label="detail coins">
+      {renderDetailCryptoCoin}
+    &lt;/List>
+  )
+}
+
+export default DetailCryptoCoins
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCurrencyFormatUsd">addCurrencyFormatUsd</a></li><li><a href="global.html#addCurrencyFormatUsdWithoutDollarSymbol">addCurrencyFormatUsdWithoutDollarSymbol</a></li><li><a href="global.html#AlertDialog">AlertDialog</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppBar">AppBar</a></li><li><a href="global.html#Copyright">Copyright</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#DataGridCryptoCoins">DataGridCryptoCoins</a></li><li><a href="global.html#DetailCryptoCoins">DetailCryptoCoins</a></li><li><a href="global.html#Loading">Loading</a></li><li><a href="global.html#MainCryptoCoins">MainCryptoCoins</a></li><li><a href="global.html#MainCryptoCoinsView">MainCryptoCoinsView</a></li><li><a href="global.html#MiniDrawer">MiniDrawer</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SnackBar">SnackBar</a></li><li><a href="global.html#TableCryptoCoins">TableCryptoCoins</a></li><li><a href="global.html#TableCryptoCoinsToolbar">TableCryptoCoinsToolbar</a></li><li><a href="global.html#theme">theme</a></li><li><a href="global.html#transformData">transformData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Nov 14 2021 10:24:49 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

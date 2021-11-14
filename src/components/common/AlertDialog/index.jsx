@@ -10,7 +10,15 @@ import {
   DialogContentText,
 } from '@material-ui/core'
 
-/* import internal modules */
+/** @description This is a functional component for generic alert dialog
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez <g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name AlertDialog
+ *  @returns {Component} Returns the alert dialog component
+ **/
 
 const AlertDialog = ({ title, children, contentText, iconOpenButton }) => {
   const [open, setOpen] = useState(false)
@@ -56,7 +64,7 @@ const AlertDialog = ({ title, children, contentText, iconOpenButton }) => {
         <DialogActions>
           <Button
             autoFocus
-            color="secondary"
+            color="primary"
             variant="contained"
             onClick={handleClose}
           >

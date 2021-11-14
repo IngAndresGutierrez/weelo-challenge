@@ -32,7 +32,7 @@ const headCells = [
     id: 'option',
     numeric: false,
     disablePadding: false,
-    label: 'Options',
+    label: 'Actions',
   },
 ]
 

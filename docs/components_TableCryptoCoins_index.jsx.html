@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/TableCryptoCoins/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/TableCryptoCoins/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable react-hooks/exhaustive-deps */
+/* import external modules */
+import {
+  Paper,
+  Table,
+  Switch,
+  Tooltip,
+  TableRow,
+  TableCell,
+  TableBody,
+  TableContainer,
+  TablePagination,
+  FormControlLabel,
+} from '@material-ui/core'
+import { Launch } from '@material-ui/icons'
+import React, { useEffect, useState } from 'react'
+
+/* import internal modules */
+import { useStyles } from './styles'
+import TableCryptoCoinsHead from './Head'
+import TableCryptoCoinsToolbar from './Toolbar'
+import AlertDialog from '../common/AlertDialog'
+import DetailCryptoCoins from '../DetailCryptoCoins'
+import { addCurrencyFormatUsd } from '../../utils/currencyFormat'
+import { transformData } from '../../utils/transformDataCryptoCoins'
+
+/** @description This is a functional component for table crypto coins
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez &lt;g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name TableCryptoCoins
+ *  @returns {Component} Returns the table crypto coins component
+ **/
+
+const descendingComparator = (a, b, orderBy) => {
+  if (b[orderBy] &lt; a[orderBy]) {
+    return -1
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1
+  }
+  return 0
+}
+
+const getComparator = (order, orderBy) => {
+  return order === 'desc'
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy)
+}
+
+const stableSort = (array, comparator) => {
+  const stabilizedThis = array.map((el, index) => [el, index])
+  stabilizedThis.sort((a, b) => {
+    const order = comparator(a[0], b[0])
+    if (order !== 0) return order
+    return a[1] - b[1]
+  })
+  return stabilizedThis.map((el) => el[0])
+}
+
+const TableCryptoCoins = ({ coinsList }) => {
+  const classes = useStyles()
+  const [page, setPage] = useState(0)
+  const [rows, setRows] = useState([])
+  const [dense, setDense] = useState(false)
+  const [order, setOrder] = useState('asc')
+  const [selected, setSelected] = useState([])
+  const [orderBy, setOrderBy] = useState('rank')
+  const [rowsPerPage, setRowsPerPage] = useState(5)
+
+  useEffect(() => {
+    transFormDataFunction()
+  }, [coinsList])
+
+  const transFormDataFunction = () => {
+    if (coinsList) {
+      const transformRows = transformData(coinsList)
+      setRows(transformRows)
+    }
+  }
+
+  const handleRequestSort = (event, property) => {
+    const isAsc = orderBy === property &amp;&amp; order === 'asc'
+    setOrder(isAsc ? 'desc' : 'asc')
+    setOrderBy(property)
+  }
+
+  const handleSelectAllClick = (event) => {
+    if (event.target.checked) {
+      const newSelecteds = rows?.map((n) => n.name)
+      setSelected(newSelecteds)
+      return
+    }
+    setSelected([])
+  }
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage)
+  }
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10))
+    setPage(0)
+  }
+
+  const handleChangeDense = (event) => {
+    setDense(event.target.checked)
+  }
+
+  const isSelected = (name) => selected.indexOf(name) !== -1
+
+  const emptyRows =
+    rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
+
+  return (
+    &lt;div className={classes.root}>
+      &lt;Paper className={classes.paper}>
+        &lt;TableCryptoCoinsToolbar numSelected={selected.length} />
+        &lt;TableContainer>
+          &lt;Table
+            className={classes.table}
+            aria-labelledby="tableTitle"
+            size={dense ? 'small' : 'medium'}
+            aria-label="enhanced table"
+          >
+            &lt;TableCryptoCoinsHead
+              order={order}
+              classes={classes}
+              orderBy={orderBy}
+              rowCount={rows.length}
+              numSelected={selected.length}
+              onRequestSort={handleRequestSort}
+              onSelectAllClick={handleSelectAllClick}
+            />
+            &lt;TableBody>
+              {stableSort(rows, getComparator(order, orderBy))
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => {
+                  const isItemSelected = isSelected(row.name)
+                  const labelId = `enhanced-table-checkbox-${index}`
+
+                  return (
+                    &lt;TableRow
+                      hover
+                      tabIndex={-1}
+                      key={row.symbol}
+                      role="checkbox"
+                      selected={isItemSelected}
+                      aria-checked={isItemSelected}
+                    >
+                      &lt;TableCell
+                        scope="row"
+                        id={labelId}
+                        component="th"
+                        padding="normal"
+                      >
+                        {row.symbol}
+                      &lt;/TableCell>
+                      &lt;TableCell align="left">{row.name}&lt;/TableCell>
+                      &lt;TableCell align="left">{row.rank}&lt;/TableCell>
+                      &lt;TableCell align="left">
+                        {addCurrencyFormatUsd(row.price_usd)}
+                      &lt;/TableCell>
+                      &lt;TableCell align="left">
+                        {addCurrencyFormatUsd(row.market_cap_usd)}
+                      &lt;/TableCell>
+                      &lt;TableCell align="left">
+                        &lt;AlertDialog
+                          title={`${row.name}`}
+                          iconOpenButton={
+                            &lt;Tooltip title="Details" placement="top-start">
+                              &lt;Launch color="primary" />
+                            &lt;/Tooltip>
+                          }
+                        >
+                          &lt;DetailCryptoCoins informationCoin={row} />
+                        &lt;/AlertDialog>
+                      &lt;/TableCell>
+                    &lt;/TableRow>
+                  )
+                })}
+              {emptyRows > 0 &amp;&amp; (
+                &lt;TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
+                  &lt;TableCell colSpan={6} />
+                &lt;/TableRow>
+              )}
+            &lt;/TableBody>
+          &lt;/Table>
+        &lt;/TableContainer>
+        &lt;TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      &lt;/Paper>
+      &lt;FormControlLabel
+        control={&lt;Switch checked={dense} onChange={handleChangeDense} />}
+        label="Dense padding"
+      />
+    &lt;/div>
+  )
+}
+
+export default TableCryptoCoins
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCurrencyFormatUsd">addCurrencyFormatUsd</a></li><li><a href="global.html#addCurrencyFormatUsdWithoutDollarSymbol">addCurrencyFormatUsdWithoutDollarSymbol</a></li><li><a href="global.html#AlertDialog">AlertDialog</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppBar">AppBar</a></li><li><a href="global.html#Copyright">Copyright</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#DataGridCryptoCoins">DataGridCryptoCoins</a></li><li><a href="global.html#DetailCryptoCoins">DetailCryptoCoins</a></li><li><a href="global.html#Loading">Loading</a></li><li><a href="global.html#MainCryptoCoins">MainCryptoCoins</a></li><li><a href="global.html#MainCryptoCoinsView">MainCryptoCoinsView</a></li><li><a href="global.html#MiniDrawer">MiniDrawer</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SnackBar">SnackBar</a></li><li><a href="global.html#TableCryptoCoins">TableCryptoCoins</a></li><li><a href="global.html#TableCryptoCoinsToolbar">TableCryptoCoinsToolbar</a></li><li><a href="global.html#theme">theme</a></li><li><a href="global.html#transformData">transformData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Nov 14 2021 10:24:49 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing suite DataGridCryptoCoins component Renders correctly - Snapshot 1`] = `
+<div
+  style={
+    Object {
+      "height": 420,
+      "width": "100%",
+    }
+  }
+/>
+`;

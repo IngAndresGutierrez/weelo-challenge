@@ -7,6 +7,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useStyles } from './styles'
 import { setHandleAlert } from '../../../redux/actions/common/common'
 
+/** @description This is a functional component for custom generic alert
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez <g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name SnackBar
+ *  @returns {Component} Returns the snackbar component
+ **/
+
 const Alert = (props) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />
 }

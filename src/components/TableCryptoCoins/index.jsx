@@ -20,7 +20,19 @@ import { useStyles } from './styles'
 import TableCryptoCoinsHead from './Head'
 import TableCryptoCoinsToolbar from './Toolbar'
 import AlertDialog from '../common/AlertDialog'
+import DetailCryptoCoins from '../DetailCryptoCoins'
+import { addCurrencyFormatUsd } from '../../utils/currencyFormat'
 import { transformData } from '../../utils/transformDataCryptoCoins'
+
+/** @description This is a functional component for table crypto coins
+ *  @version 1.0.0
+ *  @since 11/14/2021
+ *  @author Jaime Andrés Gómez Gutiérrez <g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name TableCryptoCoins
+ *  @returns {Component} Returns the table crypto coins component
+ **/
 
 const descendingComparator = (a, b, orderBy) => {
   if (b[orderBy] < a[orderBy]) {
@@ -67,17 +79,6 @@ const TableCryptoCoins = ({ coinsList }) => {
       const transformRows = transformData(coinsList)
       setRows(transformRows)
     }
-  }
-
-  const addCurrencyFormatUsd = (amount) => {
-    const optionCurrencyUSD = { style: 'currency', currency: 'USD' }
-    const numberPriceUsdFormat = new Intl.NumberFormat(
-      'en-US',
-      optionCurrencyUSD
-    )
-    const priceUsdFormat = numberPriceUsdFormat.format(amount)
-
-    return priceUsdFormat
   }
 
   const handleRequestSort = (event, property) => {
@@ -174,7 +175,7 @@ const TableCryptoCoins = ({ coinsList }) => {
                             </Tooltip>
                           }
                         >
-                          <p>{'row'}</p>
+                          <DetailCryptoCoins informationCoin={row} />
                         </AlertDialog>
                       </TableCell>
                     </TableRow>
