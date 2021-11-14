@@ -12,10 +12,24 @@ In the project directory, you can run:
 
 Go to `docs` folder. Open `index.html` file into favorite browser for show all components information.
 
+In the project directory, you can run:
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running unit tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+In the project directory, you can run:
+
+### `yarn test:coverage`
+
+launches unit test with coverage
+
+In the project directory, you can run:
+
+### `yarn cypress`
+
+Launches test end to end with `cypress`
 
 ## Available Scripts
 

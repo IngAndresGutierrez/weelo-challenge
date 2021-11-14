@@ -24,6 +24,7 @@ exports[`Testing suite TableCryptoCoins component Renders correctly - Snapshot 1
         aria-label="enhanced table"
         aria-labelledby="tableTitle"
         className="MuiTable-root makeStyles-table-3"
+        data-cy="dataGridCryptoCoins"
         role={null}
       >
         <thead

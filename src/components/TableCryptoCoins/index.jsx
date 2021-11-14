@@ -124,6 +124,7 @@ const TableCryptoCoins = ({ coinsList }) => {
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
             aria-label="enhanced table"
+            data-cy="dataGridCryptoCoins"
           >
             <TableCryptoCoinsHead
               order={order}
@@ -174,6 +175,7 @@ const TableCryptoCoins = ({ coinsList }) => {
                               <Launch color="primary" />
                             </Tooltip>
                           }
+                          data-cy="alertDialogTable"
                         >
                           <DetailCryptoCoins informationCoin={row} />
                         </AlertDialog>

@@ -60,6 +60,7 @@ const columns = [
             <Launch color="primary" />
           </Tooltip>
         }
+        data-cy="alertDialogDataGrid"
       >
         <DetailCryptoCoins informationCoin={params.row} />
       </AlertDialog>,
@@ -92,6 +93,7 @@ const DataGridCryptoCoins = ({ coinsList }) => {
         components={{
           Toolbar: GridToolbar,
         }}
+        data-cy="dataGridCryptoCoins"
       />
     </div>
   )

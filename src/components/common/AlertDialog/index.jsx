@@ -44,6 +44,7 @@ const AlertDialog = ({ title, children, contentText, iconOpenButton }) => {
           color="inherit"
           onClick={handleClickOpen}
           aria-label="account of current user"
+          data-cy="openDialogButton"
         >
           {iconOpenButton}
         </IconButton>
