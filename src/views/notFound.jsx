@@ -7,11 +7,11 @@ import Copyright from '../components/common/Copyright'
  *  @author Jaime Andrés Gómez Gutiérrez <g.gutierrez.j.andres@gmail.com>
  *
  *  @function
- *  @name MainCryptoCoinsView
+ *  @name NotFound
  *  @returns {Component} Returns the not found component view
  **/
 
-const NotFount = () => {
+const NotFound = () => {
   return (
     <>
       <h3>PageNotFound</h3>
@@ -20,4 +20,4 @@ const NotFount = () => {
   )
 }
 
-export default NotFount
+export default NotFound
