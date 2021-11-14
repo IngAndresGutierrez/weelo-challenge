@@ -14,7 +14,7 @@ import Copyright from '../components/common/Copyright'
 const NotFount = () => {
   return (
     <>
-      <h3>PageNotFount</h3>
+      <h3>PageNotFound</h3>
       <Copyright />
     </>
   )
