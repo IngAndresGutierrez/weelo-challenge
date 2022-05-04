@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# **LIVE DEMO** → [_Click here for open live demo Weelo challenge_](`https://weelo-challenge.vercel.app/`)
+# **LIVE DEMO** → [Click here for open live demo Weelo challenge](https://weelo-challenge.vercel.app/)
 
 ## Documentation about all components
 
